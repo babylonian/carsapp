@@ -1,0 +1,34 @@
+<h1 align="center" >Ads Available</h1>
+
+<table align="center">
+  <tr>
+    <th>Reg</th>
+    <th>Make</th>
+    <th>Model</th>
+    <th>Engine</th>
+    <th>Size</th>
+    <th>Price</th>
+    <th>Photo</th>
+    <th>Description</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cars.each do |car| %>
+  <tr>
+    <td><%= car.reg %></td>
+    <td><%= car.make %></td>
+    <td><%= car.model %></td>
+    <td><%= car.engine %></td>
+    <td><%= car.size %></td>
+    <td><%= car.price %></td>
+    <td><%= car.photo %></td>
+    <td><%= car.description %></td>
+   <td><%= link_to 'Show', car %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

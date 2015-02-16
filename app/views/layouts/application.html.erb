@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+
+		<head>
+<style> 
+body {
+    background-image: url("../assets/rails.jpg");
+    background-color: #cccccc;
+}
+</style>
+</head>
+			  <title>Carsapp</title>
+  
+		</h1>
+	</div>
+	<div id="navigation">
+		<ul>
+		   <li><%= link_to 'Home',root_path %> </li>
+	      <li><%= link_to 'Place ad', new_car_path %> </li>
+		  <li><%= link_to 'view cars',cars_path %> </li>
+		   <li><%= link_to 'search cars',new_car_path %> </li>
+		  <li><%= link_to 'Sign in',signin_path %> </li>
+		  <li><%= link_to 'Sign up',new_user_path %> </li>
+		   <li><%= link_to 'About', pages_about_path%> </li>
+		   <li><%= mail_to 'zaidk2008@hotmail.com',"Contact us" %> </li>
+		</ul>
+	</div>
+	<div id="banner">
+		<a href="https://www.facebook.com/Ferrari">
+		<img src="../assets/fb.jpg" height=60 width=70 />
+		
+		<a href="http://instagram.com/luxuryvehicle">
+		<img src="../assets/insta.jpg" height=60 width=70 />
+		
+		<a href="https://twitter.com/ferrariworldad">
+		<img src="../assets/twit.jpg" height=60 width=70 />
+	</div>
+
+<ul>
+	<% if !signed_in? %>
+		<li><%= link_to "Sign In", signin_path %></li>		
+	<% else %>
+		<li>Signed in as <%= @current_user.name %></li>
+		<li><%= link_to "Sign Out", signout_path %></li>
+
+	<%end %>
+
+
+
+<%= yield %>
+</head>
+

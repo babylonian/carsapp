@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Reg:</b>
+  <%= @car.reg %>
+</p>
+
+<p>
+  <b>Make:</b>
+  <%= @car.make %>
+</p>
+
+<p>
+  <b>Model:</b>
+  <%= @car.model %>
+</p>
+
+<p>
+  <b>Engine:</b>
+  <%= @car.engine %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @car.size %>
+</p>
+
+<p>
+  <b>Price:</b>
+  <%= @car.price %>
+</p>
+
+<p>
+  <b>Photo:</b>
+<%= image_tag(@car.photo ,:size=> "250x150") %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @car.description %>
+</p>
+
+<h2>Leave Offer below and phone number:</h2>
+	<%= form_for([@car, Post.new]) do |f| %>
+  		<%= f.text_area :content, :rows => 3 %> 
+		<div class="actions">
+			<%= f.submit "Post a Comment"%>
+		</div>
+	<% end %>
+</p>
+	
+<% if @car.posts.empty? %>
+    <h3>Please drop an offer below and phone number:</h3>
+<% else %>
+ <h2>Offers and comments</h2>
+  <% @car.posts.reverse.each do |post| %>
+	<p><%= post.content %>
+         Posted <%= time_ago_in_words(post.created_at) %> ago by 
+		
+   <% end %>
+<% end %>
+
+<%= link_to 'Back', cars_path %>
