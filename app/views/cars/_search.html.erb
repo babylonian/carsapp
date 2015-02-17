@@ -1,0 +1,7 @@
+
+<%= form_tag("/search", :method => "get") do %>
+<%= label_tag(:q,"Search For car:")%>
+<%= text_field_tag(:q,params[:q],:id=>'q_field')%>
+<%= submit_tag("Search")%>
+<%end%>
+

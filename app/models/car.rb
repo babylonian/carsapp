@@ -3,5 +3,10 @@ class Car < ActiveRecord::Base
 	validate :reg, presence: true
 	validates_uniqueness_of :reg
 	has_many :posts, :dependent => :destroy
-
+	
+	def self.search(search)
+	 search_condition =search + "%"
+	 find(:all,:conditions =>['make LIKE ?',search_condition])
+	 end
+	 
 end

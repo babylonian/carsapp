@@ -78,6 +78,16 @@ class CarsController < ApplicationController
       end
     end
   end
+  
+  def search
+	@cars=Car.search params[:q]
+	unless @cars.empty?
+		render 'index'
+	else
+		flash[:notice]='no car matches that search'
+		render 'index'
+	end
+  end	
 
   # DELETE /cars/1
   # DELETE /cars/1.json
