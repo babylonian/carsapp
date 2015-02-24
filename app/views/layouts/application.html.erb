@@ -6,6 +6,7 @@
   <%= csrf_meta_tags %>
 
 		<head>
+
 <style> 
 body {
     background-image: url("../assets/rails.jpg");
@@ -22,7 +23,6 @@ body {
 		   <li><%= link_to 'Home',root_path %> </li>
 	      <li><%= link_to 'Place ad', new_car_path %> </li>
 		  <li><%= link_to 'view cars',cars_path %> </li>
-		   <li><%= link_to 'search cars',search_path %> </li>
 		  <li><%= link_to 'Sign in',signin_path %> </li>
 		  <li><%= link_to 'Sign up',new_user_path %> </li>
 		   <li><%= link_to 'About', pages_about_path%> </li>
@@ -30,6 +30,7 @@ body {
 		</ul>
 	</div>
 	<div id="banner">
+	   
 		<a href="https://www.facebook.com/Ferrari">
 		<img src="../assets/fb.jpg" height=60 width=70 />
 		
@@ -38,6 +39,8 @@ body {
 		
 		<a href="https://twitter.com/ferrariworldad">
 		<img src="../assets/twit.jpg" height=60 width=70 />
+		</a>
+		  Created by Zaid Kurchied
 	</div>
 
 <ul>
@@ -51,7 +54,8 @@ body {
 		<div id="search" align="right" >
 	<%=render :partial => 'cars/search' %>
        </div>
-
+		
+	
 <%= yield %>
 </head>
 

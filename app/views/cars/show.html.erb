@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-
+<div align="center">
 <p>
   <b>Reg:</b>
   <%= @car.reg %>
@@ -37,8 +37,8 @@
 </p>
 
 <p>
-  <b>Description:</b>
-  <%= @car.description %>
+  <b>Location:</b>
+<%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@car.latitude}%2C#{@car.longitude}" %>
 </p>
 
 <h2>Leave Offer below and phone number:</h2>
@@ -51,7 +51,6 @@
 </p>
 	
 <% if @car.posts.empty? %>
-    <h3>Please drop an offer below and phone number:</h3>
 <% else %>
  <h2>Offers and comments</h2>
   <% @car.posts.reverse.each do |post| %>

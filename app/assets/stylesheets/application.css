@@ -11,7 +11,13 @@
  *= require_self
  *= require_tree
  .
-*/#container
+*/
+#footer {
+    clear: both;
+    position: relative;
+ 
+}
+#container
 {
     
     background: #FFF url(rails.jpg) no-repeat center top;

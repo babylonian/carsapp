@@ -9,4 +9,6 @@ class Car < ActiveRecord::Base
 	 find(:all,:conditions =>['make LIKE ?',search_condition])
 	 end
 	 
+	 geocoded_by :description
+	after_validation :geocode, :if => :description_changed?
 end
