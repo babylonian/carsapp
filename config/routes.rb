@@ -31,6 +31,7 @@ Carsapp::Application.routes.draw do
 	match '/signout', :to => 'sessions#destroy'
 	match '/allcars', :to => 'cars#index2'
     match '/search',  :to =>'cars#search'
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

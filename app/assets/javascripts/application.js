@@ -13,3 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+$('#datepicker').datepicker({
+	dateFormat: 'dd-mm-yy',
+	changeMonth: true,
+	changeYear: true,
+	yearRange: "-5:+20",	
+});
+
+<script>
+$(document).ready(function () {
+$(“#new_user”).validate({
+debug: true,
+rules: {
+“user[email]“: {required: true, email: true, remote:”/users/check_email” },  //added this
+“user[password]“: {required: true, minlength: 6},
+“user[password_confirmation]“: {required: true, equalTo: “#user_password”}
+}
+});
+});
+</script>

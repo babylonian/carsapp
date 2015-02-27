@@ -41,6 +41,7 @@
 <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@car.latitude}%2C#{@car.longitude}" %>
 </p>
 
+
 <h2>Leave Offer below and phone number:</h2>
 	<%= form_for([@car, Post.new]) do |f| %>
   		<%= f.text_area :content, :rows => 3 %> 
@@ -51,11 +52,11 @@
 </p>
 	
 <% if @car.posts.empty? %>
-<% else %>
- <h2>Offers and comments</h2>
-  <% @car.posts.reverse.each do |post| %>
-	<p><%= post.content %>
-         Posted <%= time_ago_in_words(post.created_at) %> ago by 
+  <% else %>
+     <h2>Offers and comments</h2>
+     <% @car.posts.reverse.each do |post| %>
+     <p><%= post.content %>
+        Posted <%= time_ago_in_words(post.created_at) %>
 		
    <% end %>
 <% end %>

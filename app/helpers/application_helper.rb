@@ -1,5 +1,9 @@
 module ApplicationHelper
-  
+
+	def euro(amount)
+		number_to_currency(amount, :unit => '&euro;')
+	end
+
 
 
  def signed_in?
